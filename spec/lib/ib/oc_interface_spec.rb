@@ -62,8 +62,8 @@ describe IB::OCInterface do
 
     describe '#has_class?' do
       it 'should return super class' do
-        expect(subject.has_class?('UIView')).to be_true
-        expect(subject.has_class?('FooBarDummyView')).to be_false
+        expect(subject.has_class?('UIView')).to be_truthy
+        expect(subject.has_class?('FooBarDummyView')).to be_falsey
       end
     end
   end

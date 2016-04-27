@@ -5,20 +5,20 @@ require "ib/parser"
 describe IB::Parser do
   it "finds outlets and actions" do
     info = IB::Parser.new(:ios).find("spec/fixtures/common/custom_view.rb").first
-    info[:class].should == [["CustomView", "UIView"]]
-    info[:outlets].should == [
+    expect(info[:class]).to eql [["CustomView", "UIView"]]
+    expect(info[:outlets]).to eql [
       ["greenLabel",    "UIGreenLabel"],
       ["redLabel",      "UILabel"],
       ["untyped_label", "id"],
       ["yellowLabel",   "id"]
     ]
-    info[:outlet_collections].should == [
+    expect(info[:outlet_collections]).to eql [
       ["greenLabelCollection",     "UIGreenLabel"],
       ["redLabelCollection",       "UILabel"],
       ["untyped_label_collection", "id"],
       ["yellowLabelCollection",    "id"]
     ]
-    info[:actions].should == [
+    expect(info[:actions]).to eql [
       ["someAction",              "sender",      nil],
       ["segueAction",             "sender",      "UIStoryboardSegue"],
       ["anotherAction",           "button",      nil],
@@ -32,12 +32,12 @@ describe IB::Parser do
 
   it "can parse complex superclasses" do
     info = IB::Parser.new(:ios).find("spec/fixtures/common/complex_superclass.rb")
-    info.first[:class].should == [["HasComplexSuperClass", "Complex::SuperClass"]]
-    info.last[:class].should == [["HasLessComplexSuperClass", "PM::Screen"]]
+    expect(info.first[:class]).to eql [["HasComplexSuperClass", "Complex::SuperClass"]]
+    expect(info.last[:class]).to eql [["HasLessComplexSuperClass", "PM::Screen"]]
   end
 
   it "can output simple classes" do
-    IB::Parser.new(:ios).find("spec/fixtures/common/simple_class.rb").length.should == 1
+    expect(IB::Parser.new(:ios).find("spec/fixtures/common/simple_class.rb").length).to eql 1
   end
 
   it "finds all infos" do

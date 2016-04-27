@@ -22,7 +22,7 @@ describe IB::DependencyResolver do
         resolver = IB::DependencyResolver.new(@files)
         expect(
           resolver.dependency_graph.kind_of?(IB::DependencyResolver::TSortHash)
-        ).to be_true
+        ).to be_truthy
       end
     end
 
@@ -161,7 +161,7 @@ describe IB::DependencyResolver do
         resolver = IB::DependencyResolver.new(@files)
         expect(
           resolver.dependency_graph.kind_of?(IB::DependencyResolver::TSortHash)
-        ).to be_true
+        ).to be_truthy
       end
     end
 

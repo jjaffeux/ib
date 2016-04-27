@@ -113,7 +113,7 @@ describe IB::Project do
 
   describe '#app_files' do
     before do
-      Motion::Project::App.config.stub('files').and_return(
+      allow(Motion::Project::App.config).to receive('files').and_return(
         [
           '/usr/local/xxx/gems/xxx/lib/xxxx.rb',
           'User/xxx/gems/xxx/lib/motion/xxxx.rb',
