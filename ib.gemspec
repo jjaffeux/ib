@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.version       = IB::VERSION
 
   gem.add_dependency 'xcodeproj', '1.0.0.beta.4'
-  gem.add_dependency 'thor',      '~> 0.15.4'
+  gem.add_dependency 'thor',      '~> 0.19'
   gem.add_dependency 'tilt',      '~> 2.0.2'
 
   gem.add_development_dependency 'rspec', '~> 2.0'
