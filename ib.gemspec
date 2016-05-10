@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = IB::VERSION
 
-  gem.add_dependency 'xcodeproj', '1.0.0.beta.4'
+  gem.add_dependency 'xcodeproj', '1.0.0'
   gem.add_dependency 'thor',      '~> 0.19'
   gem.add_dependency 'tilt',      '~> 2.0.2'
 
